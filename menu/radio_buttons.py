@@ -1,3 +1,4 @@
+#paņemts no https://github.com/Rabbid76/PyGameExamplesAndAnswers/blob/master/examples/minimal_examples/pygame_minimal_sprite_mouse_radiobutton.py
 import pygame
 from jumpingHorses.constants import SELECTION_COLOR, SELECTED_COLOR
 
