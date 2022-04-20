@@ -10,22 +10,22 @@ def alpha_beta_tree_maker(depth, board, maximizingPlayer, color, alpha, beta):
     if depth == 0 or board.winner() != None:
         if color == Constants.starting_player[2] and not maximizingPlayer:
             #print("human max")
-            value = board.evaluationHumanMax()# + random.randint(0, 4)
+            value = board.evaluationHumanMax() + random.randint(0, 4)
             return value, board
 
         elif color == Constants.starting_player[1] and not maximizingPlayer:
             #print("ai max")
-            value = board.evaluationAIMax()# + random.randint(0, 4)
+            value = board.evaluationAIMax() + random.randint(0, 4)
             return value, board
 
         elif color == Constants.starting_player[2] and  maximizingPlayer:
             #print("human min")
-            value = board.evaluationHumanMin()# + random.randint(0, 4)
+            value = board.evaluationHumanMin() + random.randint(0, 4)
             return value, board
 
         elif color == Constants.starting_player[1] and  maximizingPlayer:
             #print("ai min")
-            value = board.evaluationAIMin()# + random.randint(0, 4)
+            value = board.evaluationAIMin() + random.randint(0, 4)
             return value, board
     if maximizingPlayer:
         best = MIN
