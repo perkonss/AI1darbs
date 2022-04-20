@@ -11,9 +11,7 @@ class Board:
 	def __init__(self):
 		#self.startingPlayer = starting_player #(vārds, human krāsa, ai krāsa)
 		self.human_color = Constants.starting_player[1]
-		print("human color:", self.human_color)
 		self.AI_color = Constants.starting_player[2]
-		print("ai color:", self.AI_color)
 		self.board = [] #laukuma stāvoklis [[WHITE,BLACK,0,0,WHITE] [][]], sākumā tukšs
 		self.create_board() #spēles sākumā izveido laukumu
 	#uzzīmē visas rūtiņas  
