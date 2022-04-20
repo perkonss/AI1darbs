@@ -68,7 +68,7 @@ def game():
             pygame.time.delay(300)
             turnStartTime = pygame.time.get_ticks()         
             value, best_board = ABTree.alpha_beta_tree_maker(DEPTH, gameMaster.get_board(), True, Constants.starting_player[2], float('-inf'), float('inf'))
-            print("value: ",value, "___________________________________________")
+            #print("value: ",value, "___________________________________________")
             gameMaster.ai_move(best_board)
             turnEndTime = pygame.time.get_ticks()
             timeTaken = (turnEndTime-turnStartTime)*0.001
@@ -90,7 +90,7 @@ def game():
 
             #tiek piespiests kreisais peles klikšķis
             if event.type == pygame.MOUSEBUTTONDOWN:
-                print("________peles klikšķis")
+                #print("________peles klikšķis")
                 pos = pygame.mouse.get_pos()
                 gameMaster.select(pos)
         playerTime = (pygame.time.get_ticks() - humanStartTime)*0.001 #aizkomentē, ja cilvēka gājienu veic ai
