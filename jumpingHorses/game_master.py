@@ -5,8 +5,6 @@ from .board import Board
 from menu.main_menu import MainMenu
 import menu.gameState as GameState
 
-
-#TODO canowoc293@leafzie.com Parole1!
 class GameMaster:
     #inicializē
     def __init__(self, surface):
