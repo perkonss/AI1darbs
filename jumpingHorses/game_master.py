@@ -15,7 +15,6 @@ class GameMaster:
         self.board.draw(self.surface)
         if self.selectedPiece != None:
             self.draw_valid_moves(self.valid_moves)
-        pygame.display.update()
     #sāk no jauna spēli
     def reset(self):
         self._init()
