@@ -3,7 +3,6 @@ import jumpingHorses.constants as Constants
 import random
 
 MAX, MIN = float('inf'), float('-inf')
-possibleMoves = [] #glabā pēdējos gājienus
 
 def alpha_beta_tree_maker(depth, board, maximizingPlayer, color, alpha, beta):
     oppositeColor = opposite_color(color)
