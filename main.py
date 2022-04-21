@@ -50,31 +50,28 @@ def game():
         clock.tick(FPS)
         #cilvēka gājiens ar datora palīdzību
         #if gameMaster.turn == Constants.starting_player[1]:
-        #    update_screen(gameMaster, gameSurface, oldState)
         #    pygame.time.delay(300)
         #    turnStartTime = pygame.time.get_ticks()
         #    value, best_board = ABTree.alpha_beta_tree_maker(DEPTH, gameMaster.get_board(), True, Constants.starting_player[1], float('-inf'), float('inf'))
-        #    print("value: ",value, "___________________________________________")
         #    gameMaster.ai_move(best_board)
         #    turnEndTime = pygame.time.get_ticks()
         #    timeTaken = (turnEndTime-turnStartTime)*0.001
-        #    playerOneTimes.append(timeTaken)
-        #    update_screen(gameMaster, gameSurface, oldState)
+        #    playerOneTimes.append(timeTaken)      
         #    gameSecondary.draw_time_human(timeTaken, 'Spēlētāja patērētais laiks:')
+        #    update_screen(gameMaster, gameSurface)
+        #    gameMaster.check_winner()
         #datora gājiens
         if run and gameMaster.turn == Constants.starting_player[2]:
             playerOneTimes.append((pygame.time.get_ticks() - humanStartTime)*0.001) #aizkomentē, ja cilvēka gājienu veic ai
-            update_screen(gameMaster, gameSurface, oldState)
             pygame.time.delay(300)
             turnStartTime = pygame.time.get_ticks()         
             value, best_board = ABTree.alpha_beta_tree_maker(DEPTH, gameMaster.get_board(), True, Constants.starting_player[2], float('-inf'), float('inf'))
-            #print("value: ",value, "___________________________________________")
             gameMaster.ai_move(best_board)
             turnEndTime = pygame.time.get_ticks()
             timeTaken = (turnEndTime-turnStartTime)*0.001
             playerTwoTimes.append(timeTaken)
-            update_screen(gameMaster, gameSurface, oldState)
             gameSecondary.draw_time_ai(timeTaken, 'Datora patērētais laiks:')
+            update_screen(gameMaster, gameSurface)
             humanStartTime = pygame.time.get_ticks() #aizkomentē, ja cilvēka gājienu veic ai
 
 
@@ -90,21 +87,21 @@ def game():
 
             #tiek piespiests kreisais peles klikšķis
             if event.type == pygame.MOUSEBUTTONDOWN:
-                #print("________peles klikšķis")
                 pos = pygame.mouse.get_pos()
                 gameMaster.select(pos)
         playerTime = (pygame.time.get_ticks() - humanStartTime)*0.001 #aizkomentē, ja cilvēka gājienu veic ai
         gameSecondary.draw_time_human(playerTime, 'Spēlētāja patērētais laiks:') #aizkomentē, ja cilvēka gājienu veic ai
-        #atjauno secondary ekrānu
-        update_screen(gameMaster, gameSurface, oldState)  
+        #atjauno ekrānu
         gameSecondary.update(event_list)
+        update_screen(gameMaster, gameSurface)  
         gameMaster.check_winner()
         if oldState != gameState.currentState:
             run = False
 
-def update_screen(gameMaster,gameSurface, oldState):
-    WINDOW.blit(gameSurface, (LETTER_GAP_SIZE,0))
+def update_screen(gameMaster,gameSurface):
     gameMaster.update()
+    WINDOW.blit(gameSurface, (LETTER_GAP_SIZE,0))
+    pygame.display.update()
 
 
 def main_menu():
