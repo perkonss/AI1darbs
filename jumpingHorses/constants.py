@@ -18,8 +18,9 @@ ROWS = 8
 COLS = 8
 #cik liela būs viena rūtiņa; rūtiņu krāsa
 SQUARE_SIZE = HEIGHT //ROWS
-BLACK_SQUARE = (51,102,0)
-WHITE_SQUARE = (204, 255, 153)
+BLACK_SQUARE = (24, 10, 10)#(51,102,0)
+WHITE_SQUARE = (175,187,242)#(204, 255, 153)
+
 #nodefinē kādas būs spēlētāju krāsas; cik liela atstarpe būs starp kauliņu un rūtiņas malu; kauliņa kontūras izmēru un krāsu
 WHITE_PIECE = (255,255,255)
 BLACK_PIECE = (0,0,0)
@@ -30,10 +31,11 @@ OUTLINE_COLOR = (127,127,127)
 MOVE_COLOR = (51, 153, 255)
 MOVE_RADIUS = 15
 #main menu lietas
-MAIN_MENU_COLOR = (255, 204, 102)
-BUTTON_COLOR = (255, 153, 204)
-SELECTION_COLOR = (255, 153, 204)
-SELECTED_COLOR = (51, 204, 51)
+MAIN_MENU_COLOR = (94,43,255)#(255, 204, 102)
+BUTTON_COLOR = (192,76,253)#(255, 153, 204)
+SELECTION_COLOR = (192,76,253)#(255, 153, 204)
+SELECTED_COLOR = (252,109,171)#(51, 204, 51)
+TEXT_COLOR = (243,250,225)
 FONT_SIZE = 50
 
 #sākuma spēlētājs
