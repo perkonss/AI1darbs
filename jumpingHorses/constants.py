@@ -2,7 +2,7 @@
 import pygame
 
 #dziļums
-DEPTH = 3
+DEPTH = 1
 
 #spēles loga izmēri
 HEIGHT = 800
