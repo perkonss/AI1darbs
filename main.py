@@ -39,7 +39,7 @@ def game():
     gameMaster = GameMaster(gameSurface)
     gameSecondary = GameSecondary(WINDOW)  
     oldState = gameState.currentState
-    update_screen(gameMaster, gameSurface, oldState)  
+    update_screen(gameMaster, gameSurface)  
     global playerOneTimes
     playerOneTimes.clear()
     global playerTwoTimes
